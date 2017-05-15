@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+  <id>pleskdockerusermanager</id>
+  <name>Plesk Docker User Manager</name>
+  <description>Extension user self controlled docker containers</description>
+  <category>monitoring</category>
+  <version>0.1</version>
+  <release>1</release>
+  <vendor>Kyoku Senbi</vendor>
+  <url>https://www.kyoku-senbi.de</url>
+  <plesk_min_version>17.0.17</plesk_min_version>
+</module>
