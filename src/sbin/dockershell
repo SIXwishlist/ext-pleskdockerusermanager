@@ -1,0 +1,46 @@
+#!/bin/bash
+case $1 in
+shellrequest)
+        curl --unix-socket /var/run/docker.sock $2
+        exit 0;
+;;
+containers)
+        curl --unix-socket /var/run/docker.sock http:/v1.24/containers/json
+        exit 0
+;;
+stats)
+        docker stats -a --no-stream > $2
+        docker ps -a > $3
+        exit 0
+;;
+start)
+        docker start $2
+        exit 0
+;;
+stop)
+        docker stop $2
+        exit 0
+;;
+restart)
+        docker restart $2
+        exit 0
+;;
+inspect)
+        docker inspect $2 > $3
+        exit 0
+;;
+chmod)
+        chmod 0777 -R $2
+        exit 0
+;;
+*)
+    echo "Use $0 with options: \r\n"
+    echo "\t start [containername]\r\n"
+    echo "\t stop [containername]\r\n"
+    echo "\t restart [containername]\r\n"
+    echo "\t stats [stat file out] [ps file out]\r\n"
+    echo "\t inspect [containername] [json file out]\r\n"
+    echo "\t chmod [path]\r\n"
+    exit 1
+;;
+esac

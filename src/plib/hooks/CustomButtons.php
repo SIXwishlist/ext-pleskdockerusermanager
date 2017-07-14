@@ -25,8 +25,8 @@ class Modules_Pleskdockerusermanager_CustomButtons extends pm_Hook_CustomButtons
                 'place' => self::PLACE_DOMAIN_PROPERTIES,
                 'title' => pm_Locale::lmsg('modules.customButtons.userNav.title'),
                 'description' => pm_Locale::lmsg('modules.customButtons.userNav.desc'),
-                'icon' => pm_Context::getBaseUrl() . 'img/icons/app_ico.png',
-                'link' => pm_Context::getActionUrl('useroverview', 'index')
+                'icon' => pm_Context::getBaseUrl() . 'img/icons/app_ico_user.png',
+                'link' => pm_Context::getActionUrl('Useroverview', 'index')
             ],
            
         ];

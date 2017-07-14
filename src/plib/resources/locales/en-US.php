@@ -12,7 +12,8 @@ $messages = [
     'controllers.index.index.title' => "Docker User Manager",
     'controllers.index.overview.title' => "Overview",
     'controllers.installation.index.title' => "Installation",
-    
+    'controllers.useroverview.index.title' => "Docker Container Manager",
+    'controllers.useroverview.overview.title' => "Overview",
     
     
     'controllers.configuration.index.title' => "Configuration",

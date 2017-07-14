@@ -6,5 +6,17 @@
  */
 class Modules_Pleskdockerusermanager_Dockerdata
 {
-   
+
+
+
+
+
+
+
+
+    public static function getContainers()
+    {
+        $containerData = Modules_Pleskdockerusermanager_Database::getAllContainers();
+        return $containerData;
+    }
 }

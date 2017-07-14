@@ -13,7 +13,7 @@ class Modules_Pleskdockerusermanager_Form_Config extends pm_Form_Simple
     public function init()
     {
         parent::init();
-        $configurationDataSet = Modules_Pleskdockerusermanager_Config::getServiceConfigurationData();
+        $configurationDataSet = Modules_Pleskdockerusermanager_Configfile::getServiceConfigurationData();
 
         $this->addElement('select', 'db_server', [
             'label' => 'Mysql Server',
@@ -68,6 +68,6 @@ class Modules_Pleskdockerusermanager_Form_Config extends pm_Form_Simple
               ]
           ];
 
-          Modules_Pleskdockerusermanager_Config::setServiceConfigurationData($configurationDataSet);
+          Modules_Pleskdockerusermanager_Configfile::setServiceConfigurationData($configurationDataSet);
     }
 }

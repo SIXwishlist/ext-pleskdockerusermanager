@@ -10,10 +10,10 @@ class UseroverviewController extends pm_Controller_Action
      */
     public function indexAction()
     {
-        if (! Modules_Pleskdockerusermanager_Config::isConfigured()) {
+        if (! Modules_Pleskdockerusermanager_Configfile::isConfigured()) {
              throw new pm_Exception('Permission denied');
         }
-        $this->_forward('overview', 'Index');
+        $this->_forward('overview', 'Useroverview');
     }
 
     /**
@@ -21,6 +21,12 @@ class UseroverviewController extends pm_Controller_Action
      */
     public function overviewAction()
     {
+
+
+
+
+
+        $this->view->containers = Modules_Pleskdockerusermanager_Dockerdata::getContainers();
         $this->view->pageTitle = $this->lmsg('controllers.useroverview.index.title') . " > " . $this->lmsg('controllers.useroverview.overview.title');
     }
 }

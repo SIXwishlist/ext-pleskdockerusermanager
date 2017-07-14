@@ -3,9 +3,9 @@
 /**
  * Lesen / Schreiben der Konfigurationsdaten
  */
-class Modules_Pleskdockerusermanager_Config
+class Modules_Pleskdockerusermanager_Configfile
 {
-    private static $_configFile = "/usr/local/psa/var/modules/pleskdockerusermanager/config.conf";
+    private static $_configFile = "/usr/local/psa/var/modules/pleskdockerusermanager/config";
 
     /**
      * Gibt die Konfigurationsdaten für den Service zurück
@@ -13,7 +13,7 @@ class Modules_Pleskdockerusermanager_Config
      */
     public static function getServiceConfigurationData()
     {
-        if (!file_exists($_configFile)) {
+        if (!file_exists(self::$_configFile)) {
             return [
               'database' => [
                   'server' => 'localhost',
@@ -24,7 +24,7 @@ class Modules_Pleskdockerusermanager_Config
               ]
             ];
         }
-        return json_decode(file_get_contents(self::$_configFile));
+        return json_decode(file_get_contents(self::$_configFile), true);
     }
 
     /**
@@ -33,7 +33,7 @@ class Modules_Pleskdockerusermanager_Config
     */
     public static function setServiceConfigurationData($configData)
     {
-        file_put_contents(self::$_configFile, json_encode($serviceConfigData));
+        file_put_contents(self::$_configFile, json_encode($configData));
     }
 
     /**

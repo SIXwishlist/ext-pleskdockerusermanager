@@ -1,2 +1,126 @@
 Benutzer Overview Seite
 
+
+
+<h3>Ihre Container</h3>
+
+<div class="active-list active-list-collapsible">
+    <div class="active-list-wrap">
+        <!-- <div class="a-toolbar a-toolbar-collapsed">
+            <div class="a-toolbar-wrap">
+                <div class="a-toolbar-buttons">
+                    <div class="a-toolbar-buttons-wrap">
+                        <table cellspacing="0" class="a-toolbar-buttons-table">
+                            <tbody>
+                                <tr>
+                                    <td class="a-toolbar-buttons-table-main">
+                                        <div class="a-toolbar-buttons-main">
+                                            <a id="buttonAddDomain" href="#" class="btn"> Domain hinzufügen</a>
+                                            <a id="buttonAddSubDomain" href="#" class="btn"> Subdomain hinzufügen</a>
+                                            <a id="buttonAddDomainAlias" href="#" class="btn"> Domain-Alias hinzufügen</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+        <?php
+        foreach ($this->containers as $key => $val) {
+            ?>
+            <div id="active-list-item-d:2" class="active-list-item">
+                <div class="active-list-item-wrap">
+                    <div class="caption">
+                        <div class="caption-wrap">
+                            <div class="caption-header">
+                                <div class="caption-widget"></div>
+                                <div class="caption-header-wrap">
+                                    <div class="caption-main">
+                                        <div class="caption-icon"><span><img src="<?php echo pm_Context::getBaseUrl(); ?>img/icons/container_light.png" alt=""></span></div>
+                                        <div class="caption-head">
+                                            <div class="caption-head-wrap">
+                                                <h2 class="caption-name"><span><?php echo $val->title; ?></span></h2>
+                                                <span class="caption-head-action"><?php echo $val->dockerType; ?></span>
+                                                <span class="label label-success">Wird ausgeführt</span>
+                                                <!-- label-inactive -->
+                                            </div>
+                                            <div class="caption-summary">
+                                                <div class="caption-summary-wrap">
+                                                    <span class="summary-item">
+                                                        Image vom: <b>[<?php echo $val->lastContainerUpdateTime; ?>]</b>
+                                                    </span>
+                                                    <span class="summary-item">
+                                                        IP-Adresse: <b><?php echo $val->ipV4; ?>(v4), <?php echo $val->ipV6; ?>(v6)</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+
+
+                                            <div class="caption-toolbar">
+                                                <div class="caption-toolbar-wrap">
+                                                    <a href="#" class="i-link"><img src="<?php echo pm_Context::getBaseUrl(); ?>img/icons/appbar.stop.png" alt="" style="height: 20px; width: 20px;"> <span>Beenden</span></a>
+                                                    <a href="#" class="i-link"><img src="<?php echo pm_Context::getBaseUrl(); ?>img/icons/appbar.restart.png" alt="" style="height: 20px; width: 20px;"> <span>Neu starten</span></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="caption-data"><div class="caption-data-wrap"></div></div>
+
+                            <div class="caption-control">
+                                <span class="caption-control-wrap">
+                                    <i></i> 
+                                    <span class="caption-control-on">Mehr anzeigen</span>
+                                    <span class="caption-control-off">Weniger anzeigen</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="active-list-details">
+                        <div class="active-list-details-wrap">
+                            <div class="tools-list-box">
+                                <div class="box-area">
+                                    <div class="content">
+                                        <div class="content-area">
+                                            <ul class="tools-list">
+                                                <li class="tools-item">
+                                                    <a href="#" class="tool-block">
+                                                        <span class="tool-icon"><img src="<?php echo pm_Context::getBaseUrl(); ?>img/icons/appbar.folderunlock.png" alt=""></span>
+                                                        <span class="tool-name">Mappingordner entsperren</span>
+                                                    </a>
+                                                    <span class="tooltipData">Entsperrt alle Ordner und Dateien (umsetzen der Berechtigungen).</span>
+                                                </li>
+                                                <li class="tools-item">
+                                                    <a href="#" class="tool-block">
+                                                        <span class="tool-icon"><img src="<?php echo pm_Context::getBaseUrl(); ?>img/icons/appbar.update.png" alt=""></span>
+                                                        <span class="tool-name">Update Container</span>
+                                                    </a>
+                                                    <span class="tooltipData">Aktuallisert den Container auf eine neue Version falls diese zur Verfügung steht.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+
+            <?php
+        }
+            ?>
+    </div>
+</div>
